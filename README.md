@@ -15,13 +15,17 @@ Steps to run:
 
 Content:
 
+0. two_phase_flow_complex_domain:
 1. Precipitation_dynamics: FIG. 14. 
 2. active_matter_hydrodynamics: FIG. 12.
-
-
+3. microfluidics_complex_domain: FIG. 11.
 
 
 Code structure:
+
+two_phase_flow_complex_domain:
+
+
 
 Precipitation_dynamics:;
 PhSolve: interface evolve of precipitation
@@ -35,3 +39,17 @@ PreSolve_2: pressure solver
 particles_move: 
 particles_params: 
 particles: solvers for particles and fiber
+
+microfluidics_complex_domain:
+PhSolve: interface evolve of two-phase flows
+VeloSolve_combined: velocity of NS equations
+PreSolve_2: pressure solver
+particles_move: 
+particles_params: 
+particles: solvers for particles and fiber
+finit: read snake structure from bin file
+
+
+
+
+
