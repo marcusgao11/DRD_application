@@ -1,0 +1,7 @@
+The code is compiled as 
+
+ifort -O2 -r8 -c *.f90
+
+or,
+
+ifort -O2 -r8 -openmp -c *.f90

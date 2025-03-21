@@ -1,0 +1,13 @@
+
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "run the makefile",
+            "command": "/usr/bin/make",
+            "args": ["mcl6"],
+            "problemMatcher": [],
+        }
+    ],
+    "version": "2.0.0"
+}

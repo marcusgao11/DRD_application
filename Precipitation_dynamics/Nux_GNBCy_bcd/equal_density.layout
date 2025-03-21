@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<FileVersion major="1" minor="0" />
+	<ActiveTarget name="Debug" />
+	<File name="../finit.f90" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="400" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="../PreSolve_2.f90" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1726" topLine="65" />
+		</Cursor>
+	</File>
+	<File name="../dist.f90" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1186" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="../VeloSolve_combined.f90" open="0" top="0" tabpos="6" split="2" active="1" splitpos="1069" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="10222" topLine="315" />
+			<Cursor2 position="315" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="../mcl6.f90" open="1" top="1" tabpos="1" split="0" active="1" splitpos="1080" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4484" topLine="134" />
+		</Cursor>
+	</File>
+	<File name="../bcd.f90" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1063" topLine="36" />
+		</Cursor>
+	</File>
+	<File name="../diffusion_eqn.f90" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="950" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="../inout.f90" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="228" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="../CFT.f90" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="441" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="../ph_mu_solve.f90" open="0" top="0" tabpos="8" split="2" active="1" splitpos="740" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2401" topLine="78" />
+			<Cursor2 position="6634" topLine="249" />
+		</Cursor>
+	</File>
+	<File name="../setup.f90" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3376" topLine="138" />
+		</Cursor>
+	</File>
+	<File name="../VeloSolve_2_combined.f90" open="0" top="0" tabpos="17" split="0" active="1" splitpos="838" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="24649" topLine="806" />
+		</Cursor>
+	</File>
+	<File name="../PhSolve_2.f90" open="1" top="0" tabpos="8" split="2" active="1" splitpos="1018" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="618" topLine="0" />
+			<Cursor2 position="2205" topLine="44" />
+		</Cursor>
+	</File>
+	<File name="../interpolate_coef.f90" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="401" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="../matrix_tool.f90" open="0" top="0" tabpos="9" split="2" active="1" splitpos="732" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7039" topLine="323" />
+			<Cursor2 position="6869" topLine="313" />
+		</Cursor>
+	</File>
+	<File name="../PreSolve_init.f90" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="466" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="../DCT.f90" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="677" topLine="4" />
+		</Cursor>
+	</File>
+	<File name="../ESOLP.f90" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="632" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="../global.f90" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="213" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="../dissipation.f90" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3005" topLine="102" />
+		</Cursor>
+	</File>
+	<File name="../PhSolve.f90" open="1" top="0" tabpos="7" split="2" active="1" splitpos="1018" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="932" topLine="9" />
+			<Cursor2 position="2289" topLine="73" />
+		</Cursor>
+	</File>
+</CodeBlocks_layout_file>

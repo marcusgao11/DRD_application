@@ -1,0 +1,33 @@
+
+
+{
+    "files.exclude": {
+      "data*": true,
+      "**/*.o": true,
+      "**/*.exe": true,
+      "**/*.dll": true,
+      "**/*.so": true,
+      "**/*.dylib": true,
+      "**/*.a": true,
+      "**/*.out": true,
+      "**/*.bin": true,
+      "**/*.img": true,
+      "**/*.iso": true,
+      "**/*.img": true,
+      "**/*.jar": true,
+      "**/*.class": true,
+      "**/*.mod": true,
+      "**/*.m": true,
+      "**/makefile*": true, 
+      "**/testin*": true, 
+
+      "**/*.f": false,
+      "**/*.f90": false,
+      "**/*.c": false,
+      "**/*.h": false,
+      "**/*.cpp": false,
+      "**/*.hpp": false,
+      "**/*.cc": false,
+      "**/*.hh": false,
+      "**/*.txt": false
+    }

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="fpd_precipitation" />
+		<Option pch_mode="2" />
+		<Option compiler="gfortran" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Nux_GNBCy_bcd" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../../Staggered_Nux_GNBCy_bcd" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gfortran" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-g" />
+					<Add option="-freal-4-real-8 -fPIE" />
+					<Add directory="/opt/intel/oneapi/mkl/2022.0.2/include" />
+					<Add directory="/home/marcusgao/Documents/mcl/lib/fftw3.3.10/include" />
+				</Compiler>
+				<Linker>
+					<Add option="-lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lfftw3 -lm -Wl,-rpath=/home/marcusgao/Documents/mcl/lib/fftw3.3.10/lib" />
+					<Add library="../../../../lib/libtestlib_gfortran.a" />
+					<Add directory="/opt/intel/oneapi/mkl/2022.0.2/lib/intel64/" />
+					<Add directory="/home/marcusgao/Documents/mcl/lib/fftw3.3.10/lib" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/equal_density" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gfortran" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="../CFT.f90" />
+		<Unit filename="../DCT.f90" />
+		<Unit filename="../ESOLP.f90" />
+		<Unit filename="../PhSolve.f90" />
+		<Unit filename="../PhSolve_2.f90" />
+		<Unit filename="../PreSolve_2.f90" />
+		<Unit filename="../PreSolve_init.f90" />
+		<Unit filename="../VeloSolve_2_combined.f90" />
+		<Unit filename="../VeloSolve_combined.f90" />
+		<Unit filename="../bcd.f90" />
+		<Unit filename="../diffusion_eqn.f90" />
+		<Unit filename="../dissipation.f90" />
+		<Unit filename="../dist.f90" />
+		<Unit filename="../finit.f90" />
+		<Unit filename="../global.f90" />
+		<Unit filename="../inout.f90" />
+		<Unit filename="../interpolate_coef.f90" />
+		<Unit filename="../matrix_tool.f90" />
+		<Unit filename="../mcl6.f90" />
+		<Unit filename="../ph_mu_solve.f90" />
+		<Unit filename="../setup.f90" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

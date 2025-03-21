@@ -1,0 +1,56 @@
+
+
+
+#FF77 = ifort -double-size 64
+
+#OPT = -g
+#FF77 = ifort -double-size 64
+
+#machine dependent
+#OPT_OMP = -g -freal-4-real-8 -fopenmp
+#OPT = -g -freal-4-real-8
+#FF77 = gfortran
+
+##machine dependent
+OPT_OMP = -O2 -r8 -qopenmp
+OPT = -g -r8 -O2
+FF77 = ifort
+
+
+libtestlib.a: FFTs.o FFTs_OMP.o hwscrt.o fgmres.o vfftpack.o BiCGSTAB.o BiCGSTABREVCOM.o getbreak.o lsame.o STOPTEST2.o
+	ar rcs $@ $^
+
+FFTs.o: FFTs.f90
+	$(FF77)  $(OPT) -c FFTs.f90
+
+FFTs_OMP.o: FFTs_OMP.f90
+	$(FF77)  $(OPT_OMP) -c FFTs_OMP.f90
+
+fgmres.o: fgmres.f
+	$(FF77)  $(OPT) -c fgmres.f
+	
+hwscrt.o: hwscrt.f
+	$(FF77)  $(OPT) -c hwscrt.f
+
+vfftpack.o: vfftpack.f
+	$(FF77)  $(OPT) -c vfftpack.f
+
+BiCGSTAB.o: BiCGSTAB.f
+	$(FF77)  $(OPT) -c BiCGSTAB.f
+
+BiCGSTABREVCOM.o: BiCGSTABREVCOM.f
+	$(FF77)  $(OPT) -c BiCGSTABREVCOM.f
+	
+getbreak.o: getbreak.f
+	$(FF77)  $(OPT) -c getbreak.f
+	
+lsame.o: lsame.f
+	$(FF77)  $(OPT) -c lsame.f	
+
+STOPTEST2.o: STOPTEST2.f
+	$(FF77)  $(OPT) -c STOPTEST2.f
+
+	
+clean:
+	rm libtestlib.a
+	rm *.o

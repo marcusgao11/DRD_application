@@ -1,0 +1,47 @@
+# data and output
+**/*data*
+**/*dat*
+**/*fort.*
+
+**/*.bin
+
+
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+**/*.o
+*.obj
+**/*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+**/*.mod
+*.smod
+**/*.smod
+
+# Compiled Static libraries
+#*.lai
+#*.la
+#*.a
+#*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+**/*.out
+**/*.exe
