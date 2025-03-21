@@ -16,6 +16,8 @@ Steps to run:
 Content:
 
 1. Precipitation_dynamics: FIG. 14. 
+2. active_matter_hydrodynamics: FIG. 12.
+
 
 
 
@@ -26,3 +28,10 @@ PhSolve: interface evolve of precipitation
 diffusion_eqn: solute diffusion in the bulk
 VeloSolve_combined: velocity of NS equations
 PreSolve_2: pressure solver
+
+active_matter_hydrodynamics
+VeloSolve_combined: velocity of NS equations
+PreSolve_2: pressure solver
+particles_move: 
+particles_params: 
+particles: solvers for particles and fiber
