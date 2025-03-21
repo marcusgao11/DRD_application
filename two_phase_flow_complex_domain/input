@@ -1,0 +1,31 @@
+5.0E-2 !4 !2 !4 !5.0E-4 ! 0.05 !xld
+3 !00 !32  !32  !100  !2.72   !re
+120 !.0  !10 !1.06E2  !0 	  !53.033  !0. !ca
+500.    !0000000.0     !vs
+0.0 !0.038     !!3.8    !xls
+0.0 !0.038     !!3.8    !xls
+0  !0.0038     !!3.8    !xls
+0  !0.0038     !!3.8    !xls
+0.0  !0.2 !0 !0.2   !1.0   ! uw top
+0.0  !-0.2 ! !-0.2  !-1.0   ! uw bottom
+1.0 !.0 !1.0 !2.0 !3.5  !1.0 !3.5  !3.0   !0.4  !1.2   !slen
+0.4 !3.0 !0.4 !0.5 !1.5  !1.0 !0.2 !1.0 !1.5  !1.0  !0.4   !0.1   !0.4    !shig
+30 !150 !30 !60 !120 !135 !45 !120  !77.6 !  contact angle
+1.0 !0.38 !  2.6316    ! slipratio
+0  !iflag
+160 !0 !0 !00 !00  !00 !100 !50    !step tocalculate energy output
+30000 !tf
+0.01 !2 !025 !1 !05 !05 !1 !05 !0.01  !0.01  !ratio of interface thickness to oringinal size
+1.5 !1.0 ! artificial coefficient to inforce stability
+1.0E-8  !! tolerence
+0.0 !-1000.  !0.1 !external force external force along z direction
+0.  !0.1 !external force along x
+0.1 !01 !01 !1.0 !0.01 !0.05 !1.0 !1.0 !0.05 !01 !1 !02 !1 ! 5 !1.0  !0 05 !0.05  !change of time step: \dt*~ is the new time step
+1 !000. !0.001 !0.001 !5. !100.  !ratio of density between liquid and gas
+1 !00 !300 !100 !0. !00.0 !1000.0 !000 !0.01 !0.01  !ratio of viscosity between liquid and gas
+0.0 !1.0 !1.0 !0.2   ! UU
+'n' ! lr_bd_type: n for Nueman, p for periodic, both for velocity and phase variable, d for direchelt velocity for left, neumman for right, neumann for phase variable
+'d' ! top_type_ph: n for Nueman, d for dynamic
+'d' ! bot_type_ph: n for Nueman, d for dynamic
+'n'   ! top_type_u: n for no-slip, g for GNBC   
+'n'   ! bot_type_u: n for no-slip, g for GNBC

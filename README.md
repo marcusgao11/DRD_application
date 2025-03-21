@@ -24,6 +24,13 @@ Content:
 Code structure:
 
 two_phase_flow_complex_domain:
+ph_mu_solve: interface evolve of two-phase flows
+VeloSolve_combined: velocity of NS equations
+PreSolve_2: pressure solver
+particles_move: 
+particles_params: 
+particles: solvers for particles and fiber
+finit: complex domain is specified here
 
 
 
