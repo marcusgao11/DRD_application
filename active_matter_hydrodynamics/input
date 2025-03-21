@@ -20,7 +20,7 @@
 1.0E-8  !! tolerence
 0 !-10.  !0.1 !external force
 0. !-10.  !0.1 !external force
-0.5 !0.02 !0.1 !02 !0.02 !02 !5 !0.2 !0.01 !5 !1.0  !0 05 !0.05  !change of time step: \dt*~ is the new time step
+0.2 !0.02 !0.1 !02 !0.02 !02 !5 !0.2 !0.01 !5 !1.0  !0 05 !0.05  !change of time step: \dt*~ is the new time step
 1. !000. !0.001 !0.001 !5. !100.  !ratio of density between liquid and gas
 50 !100 !0. !00.0 !1000.0 !000 !0.01 !0.01  !ratio of viscosity between liquid and gas
 0.0 !1.0   ! UU

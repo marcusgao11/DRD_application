@@ -6,7 +6,8 @@
     ! careful: here p is not the same format as u,v,p
     real p(-1:M,-1:N),f(-1:M,-1:N)
     real t
-    character fname*7
+    character(len=*) :: fname
+    !character fname*7
     open(11,file=fname, status='unknown',form='unformatted')
     write(11)((x(i,k),k=0,N),i=0,M)
     write(11)((y(i,k),k=0,N),i=0,M)
@@ -29,7 +30,8 @@
     real p(-1:M,-1:N),f(-1:M,-1:N),f_2(-1:M,-1:N)
     real pf1(-1:M,-1:N), pf2(-1:M,-1:N)
     real t
-    character fname*7
+    character(len=*) :: fname
+    !character fname*7
     open(11,file=fname, status='unknown',form='unformatted')
     write(11)((x(i,k),k=0,N),i=0,M)
     write(11)((y(i,k),k=0,N),i=0,M)
@@ -52,10 +54,11 @@
         integer np, np_swm, i,k
         real pos(0:np-1,0:1), pos_swm(0:np_swm-1, 0:1), swm_ang(0:np_swm-1)
         real t
-        character fname*7
+        character(len=*) :: fname
+        !character fname*7
 
         ! 打开文件
-        open(unit=10, file=fname // '_fib.txt', status='replace', action='write')
+        open(unit=10, file= trim(fname) // '_fib.txt', status='replace', action='write')
         ! 写入数组
         do i = 0, np-1
             write(10, '(I10, 3F10.5)') i, pos(i,0), pos(i,1), t
@@ -64,7 +67,7 @@
         close(10)
 
         ! 打开文件
-        open(unit=10, file=fname // '_swm.txt', status='replace', action='write')
+        open(unit=10, file= trim(fname) // '_swm.txt', status='replace', action='write')
         ! 写入数组
         do i = 0, np_swm-1
             write(10, '(I10, 3F10.5)') i, pos_swm(i,0), pos_swm(i,1), swm_ang(i)
