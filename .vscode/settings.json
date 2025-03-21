@@ -18,7 +18,7 @@
       "**/*.class": true,
       "**/*.mod": true,
       "**/*.m": true,
-      "**/makefile*": true, 
+      //"**/makefile*": true, 
       "**/testin*": true, 
 
       "**/*.f": false,
