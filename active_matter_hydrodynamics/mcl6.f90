@@ -7,7 +7,7 @@
     character(len=16)::fname
     character,dimension(0:9)::ch=(/'0','1','2','3','4','5','6','7','8','9'/)
 
-    integer istep,iflag,i,j,k1,k2,k3,kcount,k
+    integer istep,iflag,i,j,k1,k2,k3,k4, kcount,k
     real tf,t,time_step_change
 
     real gamma1
@@ -201,19 +201,20 @@ write(6,*) 're= finit', re
 
     if(iflag == 0) then
        print *,'output data000'
-       !call output(nr,nz,r,z,u,v,p,ph,t,'data000')
-       call output2(nr,nz,r,z,u,v,p,ph, ph_swm, particle_force1, particle_force2, t, 'data000')
-       call output_fib_swm(Np,points, Np_swm, pos_swm, active_F_swm_ang, t, 'data000')
+       !call output(nr,nz,r,z,u,v,p,ph,t,'data0000')
+       call output2(nr,nz,r,z,u,v,p,ph, ph_swm, particle_force1, particle_force2, t, 'data0000')
+       call output_fib_swm(Np,points, Np_swm, pos_swm, active_F_swm_ang, t, 'data0000')
 
        print *,'output databdr'
        call output(nr,nz,r,z,u,v,p,bdr_ph,t,'databdr')
 
     else
 
-       k1 = iflag/100
-       k2 = (iflag - k1*100)/10
-       k3 = iflag - k1*100 - k2*10
-       fname = 'data'//ch(k1)//ch(k2)//ch(k3)
+       k1 = iflag/1000
+       k2 = (iflag - k1*1000)/100
+       k3 = (iflag - k1*1000 - k2*100)/10
+       k4 = iflag - k1*1000 - k2*100 - k3*10
+       fname = 'data'//ch(k1)//ch(k2)//ch(k3)//ch(k4)
 
        print *,'input from ',fname
        call input(nr,nz,r,z,u,v,p,ph,t,fname)
@@ -298,8 +299,8 @@ write(6,*) 're= finit', re
     endif  ! end of is_fluid .AND. kcount*dt > startup_time
 
 
-!   call output2(nr,nz,r,z,u,v,p,ph, ph_swm, particle_force1, particle_force2, t, 'testin2')
-!   print *,'output testin2'
+ ! call output2(nr,nz,r,z,u,v,p,ph, ph_swm, particle_force1, particle_force2, t, 'testin2')
+ ! print *,'output testin2'
 
 
 !!!!  test of cpu time per timestep
@@ -342,19 +343,23 @@ write(6,*) 're= finit', re
      if(kcount/istep*istep == kcount) then
 
        iflag=iflag+1
-       k1 = iflag/100
-       k2 = (iflag - k1*100)/10
-       k3 = iflag - k1*100 - k2*10
-       fname = 'data'//ch(k1)//ch(k2)//ch(k3)
+
+       k1 = iflag/1000
+       k2 = (iflag - k1*1000)/100
+       k3 = (iflag - k1*1000 - k2*100)/10
+       k4 = iflag - k1*1000 - k2*100 - k3*10
+       fname = 'data'//ch(k1)//ch(k2)//ch(k3)//ch(k4)
+
 
         !call output(nr,nz,r,z,u,v,p,ph,t,fname)
         call output2(nr,nz,r,z,u,v,p,ph, ph_swm, particle_force1, particle_force2, t, fname)
         call output_fib_swm(Np,points, Np_swm, pos_swm, active_F_swm_ang, t, fname)
         print *,'output ',fname
-         if(iflag .GE. 999) then
+         if(iflag .GE. 9999) then
            iflag = -1
            print *,'no engouh files to ouput'
            print *,'if you want to continue,it will input from the beginning'
+           !stop
          endif
 
        call dissipation(ph_pre,dissip2,mass2,t)
@@ -619,10 +624,12 @@ do while(t <= tf)
     !pause
 
        iflag=iflag+1
-       k1 = iflag/100
-       k2 = (iflag - k1*100)/10
-       k3 = iflag - k1*100 - k2*10
-       fname = 'data'//ch(k1)//ch(k2)//ch(k3)
+
+       k1 = iflag/1000
+       k2 = (iflag - k1*1000)/100
+       k3 = (iflag - k1*1000 - k2*100)/10
+       k4 = iflag - k1*1000 - k2*100 - k3*10
+       fname = 'data'//ch(k1)//ch(k2)//ch(k3)//ch(k4)
 
 
         call output2(nr,nz,r,z,u,v,p,ph, ph_swm, particle_force1, particle_force2, t,fname)
@@ -637,10 +644,11 @@ do while(t <= tf)
 !        call output(nr,nz,w3+w4,z,u,v,p,ph,t,fname)
 
 	print *,'output ',fname
-         if(iflag .GE. 999) then
+         if(iflag .GE. 9998) then
            iflag = -1
            print *,'no engouh files to ouput'
            print *,'if you want to continue,it will input from the beginning'
+           stop
          endif
 
        call dissipation(ph_pre,dissip2,mass2,t)
@@ -655,7 +663,7 @@ do while(t <= tf)
 !          stop
        endif
 
-if(iflag .ge. 400) stop
+!if(iflag .ge. 400) stop
 
 !       if(k3+k2*10 .eq. 7) stop
 
