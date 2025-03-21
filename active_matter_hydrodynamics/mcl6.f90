@@ -298,8 +298,8 @@ write(6,*) 're= finit', re
     endif  ! end of is_fluid .AND. kcount*dt > startup_time
 
 
-  call output2(nr,nz,r,z,u,v,p,ph, ph_swm, particle_force1, particle_force2, t, 'testin2')
-  print *,'output testin2'
+!   call output2(nr,nz,r,z,u,v,p,ph, ph_swm, particle_force1, particle_force2, t, 'testin2')
+!   print *,'output testin2'
 
 
 !!!!  test of cpu time per timestep
