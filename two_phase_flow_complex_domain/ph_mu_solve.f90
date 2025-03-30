@@ -42,11 +42,11 @@
   !TODO: should be u\grad\phi
   do k=0,nz-1
     do i=0,nr-1
-      ! f2(i,k) = f2(i,k) - dt*(u(i+1,k)+u(i,k))/2.0 * (ph(i+1,k)*bdr_ph_used(i+1,k) - ph(i-1,k)*bdr_ph_used(i-1,k) )/2.0/dr&
-      ! & - dt*(v(i,k+1)+v(i,k))/2.0 * (ph(i,k+1)*bdr_ph_used(i,k+1) - ph(i,k-1)*bdr_ph_used(i,k-1) )/2.0/dz
+      f2(i,k) = f2(i,k) - dt*(u(i+1,k)+u(i,k))/2.0 * (ph(i+1,k)*bdr_ph_used(i+1,k) - ph(i-1,k)*bdr_ph_used(i-1,k) )/2.0/dr&
+      & - dt*(v(i,k+1)+v(i,k))/2.0 * (ph(i,k+1)*bdr_ph_used(i,k+1) - ph(i,k-1)*bdr_ph_used(i,k-1) )/2.0/dz
 
-      f2(i,k) = f2(i,k) - dt*(u(i+1,k)+u(i,k))/2.0 * (ph(i+1,k)-ph(i-1,k))/2.0/dr&
-        & - dt*(v(i,k+1)+v(i,k))/2.0 * (ph(i,k+1)-ph(i,k-1))/2.0/dz
+    !   f2(i,k) = f2(i,k) - dt*(u(i+1,k)+u(i,k))/2.0 * (ph(i+1,k)-ph(i-1,k))/2.0/dr&
+    !     & - dt*(v(i,k+1)+v(i,k))/2.0 * (ph(i,k+1)-ph(i,k-1))/2.0/dz
     enddo
   enddo
 

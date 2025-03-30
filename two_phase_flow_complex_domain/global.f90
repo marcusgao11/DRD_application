@@ -12,6 +12,9 @@ module global
 !    integer,parameter::nr=128
 !    integer,parameter::nz=64
 
+   integer,parameter::nr=128
+   integer,parameter::nz=128
+
 !    integer,parameter::nr=400
 !    integer,parameter::nz=300
 
@@ -21,8 +24,8 @@ module global
 !    integer,parameter::nr=350
 !    integer,parameter::nz=150
 
-    integer,parameter::nr=512
-    integer,parameter::nz=256
+    ! integer,parameter::nr=512
+    ! integer,parameter::nz=256
 
     ! integer,parameter::nr=420 !200
     ! integer,parameter::nz=180 !100
@@ -86,6 +89,7 @@ module global
     real va_2(1:nz-1,0:nr-1),vb_2(1:nz-1,0:nr-1),vc_2(1:nz-1,0:nr-1)
     character lr_bd_type, top_type_ph, bot_type_ph
     character top_type_u, bot_type_u
+	character is_complex_domain
  
     real bdr_ph(-1:nr,-1:nz), fpd_ph(-1:nr,-1:nz) ! fpd_ph for tracking particles
     real bdr_ph_used(-1:nr,-1:nz) ! bdr_ph_used: used in ph_mu_solve, set in finit: when = bdr_ph, diffuse domain, =0, original
@@ -139,5 +143,6 @@ module global
     public bdr_upp, bdr_low
     public ph_M_0, ph_M_inner ! mobnility in CH equation
     public penalty_k, phi_mode
+	public is_complex_domain
 
 end module

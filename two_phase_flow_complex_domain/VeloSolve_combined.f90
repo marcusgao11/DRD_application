@@ -60,8 +60,12 @@
       ! ca*\mu*grad\phi
       do k=0,nz-1
          do i=0,nr
-            fu(i,k) = ca*(rmu_after(i,k) + rmu_after(i-1,k))/2.0 * (ph_after(i,k) - ph_after(i-1,k)) /dr &
-              & * (1.0 - (bdr_ph(i,k) + bdr_ph(i-1,k))/2.0 ) ! exclude boundary effect
+            fu(i,k) = ca*(rmu_after(i,k) + rmu_after(i-1,k))/2.0 * &
+				& (ph_after(i,k)*bdr_ph_used(i,k) - ph_after(i-1,k)*bdr_ph_used(i-1,k)) /dr
+
+			! fu(i,k) = ca*(rmu_after(i,k) + rmu_after(i-1,k))/2.0 * (ph_after(i,k) - ph_after(i-1,k)) /dr
+			! !&          & * (1.0 - (bdr_ph(i,k) + bdr_ph(i-1,k))/2.0 ) ! exclude boundary effect
+
             !fv(i,k) = ca*(rmu_after(i,k) + rmu_after(i,k-1))/2.0 * (ph_after(i,k) - ph_after(i,k-1)) /dz
             ! \phi is located at corners
             !fu(i,k) = ca*(rmu_after(i,k) + rmu_after(i,k+1))/2.0 * &
@@ -74,8 +78,14 @@
       do k=1,nz-1
          do i=0,nr-1
             !fu(i,k) = ca*(rmu_after(i,k) + rmu_after(i-1,k))/2.0 * (ph_after(i,k) - ph_after(i-1,k)) /dr
-            fv(i,k) = ca*(rmu_after(i,k) + rmu_after(i,k-1))/2.0 * (ph_after(i,k) - ph_after(i,k-1)) /dz &
-              & * (1.0 - (bdr_ph(i,k) + bdr_ph(i,k-1))/2.0 ) ! exclude boundary effect
+
+			fv(i,k) = ca*(rmu_after(i,k) + rmu_after(i,k-1))/2.0 * &
+			& (ph_after(i,k)*bdr_ph_used(i,k) - ph_after(i,k-1)*bdr_ph_used(i,k-1)) /dz
+
+
+            ! fv(i,k) = ca*(rmu_after(i,k) + rmu_after(i,k-1))/2.0 * (ph_after(i,k) - ph_after(i,k-1)) /dz &
+            !   & * (1.0 - (bdr_ph(i,k) + bdr_ph(i,k-1))/2.0 ) ! exclude boundary effect
+
             ! \phi is located at corners
             !fu(i,k) = ca*(rmu_after(i,k) + rmu_after(i,k+1))/2.0 * &
             !  & ( ph_after(i+1,k+1) - ph_after(i-1,k+1) + ph_after(i+1,k) - ph_after(i-1,k))/2.0 /2.0/dr

@@ -69,7 +69,7 @@
 
     ! TODO
 ! when initialize bdr_ph, needs to use ep_s
-    ep_s = I_thickness/4.0 !*2 !/5.0
+    ep_s = I_thickness /2.0 !/4.0 !*2 !/5.0
 
 !!--------------------------------------------------------------------------
 ! type 1:
@@ -237,23 +237,6 @@
 ! call reinint_by_PhSolve()
 
 
-
-! ! !--------------------------------------------------------------------------
-! ! type 3: no boundary
-! bdr_upp = shig; bdr_low = 0.0
-! bdr_ph = 0.0
-
-! do j=-1,nz
-!   do i=-1,nr
-!     if (bdr_ph(i,j) > 0.5) then
-!       bdr_ph_penalty(i,j) = 1.0
-!     else
-!       bdr_ph_penalty(i,j) = 0.0
-!     endif
-!   enddo
-! enddo 
-
-
 !--------------------------------------------------------------------------
 !type 4:  half plane
 bdr_upp = shig; bdr_low = shig/5.0;
@@ -414,6 +397,24 @@ bdr_upp = shig; bdr_low = shig/5.0;
   ! enddo
 
 
+! !--------------------------------------------------------------------------
+! muse placed at last position
+! type 3: no boundary
+if (is_complex_domain == 'n') then
+  	bdr_upp = shig; bdr_low = 0.0
+	bdr_ph = 0.0
+
+	do j=-1,nz
+		do i=-1,nr
+			if (bdr_ph(i,j) > 0.5) then
+			bdr_ph_penalty(i,j) = 1.0
+			else
+			bdr_ph_penalty(i,j) = 0.0
+			endif
+		enddo
+	enddo 
+endif
+
 !--------------------------------------------------------------------------
 ! initial for particle phi
 do j=0,nz-1
@@ -465,7 +466,7 @@ fpd_ph = fpd_ph + bdr_ph
       ! ph(i,j) = tanh(-(sqrt((r(i,j)-0.5*slen)**2/2.0 + (z(i,j)-0.5*shig)**2) - 0.1 )&
       !  &/(sqrt(2.0)*I_thickness) )
 
-       ph(i,j) = tanh(-(sqrt((r(i,j)-0.5*slen)**2 + (z(i,j)-bdr_low)**2) - 0.2 )&
+       ph(i,j) = tanh(-(sqrt((r(i,j)-0.5*slen)**2 + (z(i,j)-bdr_low-0.2)**2) - 0.2 )&
          &/(sqrt(2.0)*I_thickness) )
 
       ! ph(i,j) = tanh(-(sqrt((r(i,j)-0.5*slen)**2 + (z(i,j)-0.8)**2) - 0.4 )&
@@ -570,6 +571,7 @@ fpd_ph = fpd_ph + bdr_ph
     bdr_ph_used = 1.0 - bdr_ph
     bdr_ph_used_adjust = 1.0E-6
 
+	! ! original DRD
     ! bdr_ph_used = 1.0
     ! bdr_ph_used_adjust = 0.0
 
@@ -580,6 +582,11 @@ fpd_ph = fpd_ph + bdr_ph
         !angleT(i) = 180 - angle
         angleT(i) = angle
      enddo
+
+	 if (is_complex_domain == 'y') then
+		angleB = 90
+        angleT = 90
+	 endif
 
 
    call bcd(0.0)
@@ -611,7 +618,7 @@ fpd_ph = fpd_ph + bdr_ph
 
     !dt = dt3*time_step_change !/10.
 
-    dt = 1.0E-4/2.0/8 !5.0E-4
+    dt = 1.0E-4/2.0 !/8 !5.0E-4
 
     !dt = 0.035*min(dr,dz)**2/xld/4./2./2./2.*100
 

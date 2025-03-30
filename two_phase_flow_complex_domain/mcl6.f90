@@ -97,6 +97,7 @@
         read(3,*) bot_type_ph
         read(3,*) top_type_u
         read(3,*) bot_type_u
+		read(3,*) is_complex_domain
 
         close(3)
 
@@ -134,6 +135,7 @@
         write(*,*) 'bot_type_ph: ', bot_type_ph
         write(*,*) 'top_type_u: ', top_type_u
         write(*,*) 'bot_type_u: ', bot_type_u
+		write(*,*) 'is_complex_domain: ', is_complex_domain
         write(*,*) ''
 
 !100 format(A30,10X,f10.5)
