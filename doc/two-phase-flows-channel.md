@@ -4,8 +4,10 @@
 
 ### Re = 1.0， Ca=100
 
-Dynamic results:
-![contourMovieRe1.0](results/microfluidics_complex_domain/microfluidics_complex_domain_0626.gif)
+--Dynamic results:  
+![contourMovieRe1.0](results/microfluidics_complex_domain/microfluidics_complex_domain_0626.gif)  
 
-Snapshot:
+\
+\
+--Snapshot:  
 ![contourSnapRe1.0](results/microfluidics_complex_domain/snake_complex_0626.png)
