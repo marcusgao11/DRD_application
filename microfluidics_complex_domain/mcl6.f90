@@ -668,7 +668,7 @@ do while(t <= tf)
 !          stop
        endif
 
-if(iflag .ge. 400) stop
+if(iflag .ge. 200) stop
 
 !       if(k3+k2*10 .eq. 7) stop
 

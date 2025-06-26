@@ -1,6 +1,5 @@
 function [r,z,u,v,p,f,f2, t]=da1(file,m,n)
-%close all
-
+    
     ff_info = dir(file);
     ff_info.date
 
@@ -24,8 +23,5 @@ function [r,z,u,v,p,f,f2, t]=da1(file,m,n)
     fseek(fid,8,'cof');
     t=fread(fid,1,'double');
     fclose(fid);
-
-    %r = r'; z = z'; u = u';
-    %v = v'; p = p'; f = f';
 
 end
