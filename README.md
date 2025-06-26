@@ -61,15 +61,17 @@ finit: read snake structure from bin file
 
 ## Example: two-phase flows with fibers in complex channel
 To run the example:
->cd DRD_application/microfluidics_complex_domain
-> make
-> ./mcl6
+
+    > cd DRD_application/microfluidics_complex_domain  
+    > make  
+    > ./mcl6  
 
 Running times on single CPU intel i7-14700:  around 4 hours
 
-Plot the results:
-> python .\post_process\plot_movie.py   
-> python .\post_process\plot_snapshot.py
+Plot the results:  
+
+    > python .\post_process\plot_movie.py  
+    > python .\post_process\plot_snapshot.py  
 
 Results are also presented here:
 * [two-phase flows with fibers in complex channel](doc/two-phase-flows-channel.md);
